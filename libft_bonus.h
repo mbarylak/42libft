@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   libft_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbarylak <mbarylak@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/13 17:17:43 by mbarylak          #+#    #+#             */
-/*   Updated: 2021/09/20 20:35:18 by mbarylak         ###   ########.fr       */
+/*   Created: 2021/09/20 20:28:22 by mbarylak          #+#    #+#             */
+/*   Updated: 2021/09/20 21:55:50 by mbarylak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#ifndef LIBFT_BONUS_H
+# define LIBFT_BONUS_H
 
-void	*ft_memset(void *str, int c, size_t len)
+# include <stddef.h>
+# include <stdlib.h>
+
+typedef struct s_list
 {
-	unsigned int	i;
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
-	i = 0;
-	while (i < len)
-	{
-		((unsigned char *) str)[i] = c;
-		i++;
-	}
-	return (str);
-}
+#endif

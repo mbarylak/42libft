@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbarylak <mbarylak@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/13 17:17:43 by mbarylak          #+#    #+#             */
-/*   Updated: 2021/09/20 20:35:18 by mbarylak         ###   ########.fr       */
+/*   Created: 2021/09/16 16:44:01 by mbarylak          #+#    #+#             */
+/*   Updated: 2021/09/17 12:46:46 by mbarylak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t len)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	unsigned int	i;
+	char	*substr;
+	size_t	i;
+	size_t	size;
 
 	i = 0;
-	while (i < len)
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	size = ft_strlen(&s[start]);
+	if (size < len)
+		len = size;
+	substr = (char *) ft_calloc(len + 1, sizeof(char));
+	if (!substr)
+		return (NULL);
+	while (i < len && s[start])
 	{
-		((unsigned char *) str)[i] = c;
+		substr[i] = s[start];
+		start++;
 		i++;
 	}
-	return (str);
+	return (substr);
 }

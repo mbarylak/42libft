@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbarylak <mbarylak@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 20:39:07 by mbarylak          #+#    #+#             */
-/*   Updated: 2021/09/20 13:44:48 by mbarylak         ###   ########.fr       */
+/*   Created: 2021/09/16 18:12:35 by mbarylak          #+#    #+#             */
+/*   Updated: 2021/09/16 19:26:40 by mbarylak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	void	*str;
+	size_t	size1;
+	size_t	size2;
+	char	*strjoin;
 
-	str = malloc(size * count);
-	if (str == NULL)
+	if (!s1 || !s2)
 		return (NULL);
-	ft_bzero(str, size * count);
-	return (str);
+	size1 = ft_strlen(s1);
+	size2 = ft_strlen(s2);
+	strjoin = (char *) ft_calloc(size1 + size2 + 1, sizeof(char));
+	if (!strjoin)
+		return (NULL);
+	while (size2)
+	{
+		size2--;
+		strjoin[size1 + size2] = s2[size2];
+	}
+	while (size1)
+	{
+		size1--;
+		strjoin[size1 + size2] = s1[size1];
+	}
+	return (strjoin);
 }
