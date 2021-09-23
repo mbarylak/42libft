@@ -6,7 +6,7 @@
 /*   By: mbarylak <mbarylak@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 12:21:04 by mbarylak          #+#    #+#             */
-/*   Updated: 2021/09/20 22:00:00 by mbarylak         ###   ########.fr       */
+/*   Updated: 2021/09/21 21:08:42 by mbarylak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,11 @@ static int	get_word_len(const char *s, char c, int i)
 	return (w_len);
 }
 
-static void	*free_mem(char **split, int w_nbr)
+static void	*free_mem(char **split, int i)
 {
-	int	i;
-
-	i = 0;
-	while (i < w_nbr)
-		free(split[i++]);
-	free(split[i]);
+	while (--i >= 0)
+		free(split[i]);
+	free(split);
 	return (NULL);
 }
 
@@ -71,7 +68,7 @@ static char	**fill_split(const char *s, char c, int w_nbr, char **split)
 		w_len = get_word_len(s, c, j);
 		split[i] = (char *) malloc((w_len + 1) * sizeof(char));
 		if (!split[i])
-			return (free_mem(split, w_nbr));
+			return (free_mem(split, i));
 		k = 0;
 		while (k < w_len)
 			split[i][k++] = s[j++];
