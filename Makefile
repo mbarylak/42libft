@@ -6,7 +6,7 @@
 #    By: mbarylak <mbarylak@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/13 16:37:19 by mbarylak          #+#    #+#              #
-#    Updated: 2021/09/23 13:10:36 by mbarylak         ###   ########.fr        #
+#    Updated: 2021/09/23 13:21:24 by mbarylak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ all: $(NAME)
 $(NAME): $(OBJ) $(INCLUDE)
 	ar rcs $(NAME) $(OBJ)
 
-bonus: $(BONUSOBJ) $(NAME) $(INCLUDE)
+bonus: $(BONUSOBJ) $(INCLUDE)
 	ar rcs $(NAME) $(BONUSOBJ)
 
 clean:
