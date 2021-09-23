@@ -6,11 +6,11 @@
 /*   By: mbarylak <mbarylak@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 14:17:00 by mbarylak          #+#    #+#             */
-/*   Updated: 2021/09/21 14:22:42 by mbarylak         ###   ########.fr       */
+/*   Updated: 2021/09/23 13:06:11 by mbarylak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {

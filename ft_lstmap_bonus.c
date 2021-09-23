@@ -6,11 +6,11 @@
 /*   By: mbarylak <mbarylak@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:31:59 by mbarylak          #+#    #+#             */
-/*   Updated: 2021/09/21 18:50:54 by mbarylak         ###   ########.fr       */
+/*   Updated: 2021/09/23 13:07:17 by mbarylak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
