@@ -6,9 +6,11 @@
 /*   By: mbarylak <mbarylak@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 16:02:54 by mbarylak          #+#    #+#             */
-/*   Updated: 2021/09/14 16:13:04 by mbarylak         ###   ########.fr       */
+/*   Updated: 2021/09/23 19:39:04 by mbarylak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

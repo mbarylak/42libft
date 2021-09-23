@@ -6,7 +6,7 @@
 #    By: mbarylak <mbarylak@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/13 16:37:19 by mbarylak          #+#    #+#              #
-#    Updated: 2021/09/23 13:21:24 by mbarylak         ###   ########.fr        #
+#    Updated: 2021/09/23 16:18:37 by mbarylak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,6 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-re: fclean $(NAME)
+re: fclean all
 
 .PHONY: all clean fclean re bonus
